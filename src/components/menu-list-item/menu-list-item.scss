@@ -38,5 +38,21 @@
         color: #fff;
         font-size: 16px;
         cursor: pointer;
+        transition: .5s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        &:hover{
+            background-color: green;
+        }
+    }
+    &__footer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__view{
+        width: 60px;
     }
 }
