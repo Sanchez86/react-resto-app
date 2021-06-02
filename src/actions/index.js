@@ -31,10 +31,26 @@ const deleteFromCart = (id) => {
     }
 };
 
+const onAddTheSame = (id) => {
+    return{
+        type: 'ADD_THE_SAME',
+        payload: id
+    }
+};
+
+const onKillTheSame = (id) => {
+    return{
+        type: 'KILL_THE_SAME',
+        payload: id
+    }
+};
+
 export {
     menuLoaded,
     menuRequested,
     menuError,
     onAddToCart,
-    deleteFromCart
+    deleteFromCart,
+    onAddTheSame,
+    onKillTheSame
 };

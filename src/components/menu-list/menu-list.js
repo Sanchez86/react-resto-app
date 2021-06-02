@@ -21,8 +21,7 @@ class MenuList extends Component {
 
     render() {
 
-        const {menuItems, loading, error, onAddToCart} = this.props;
-
+        const {menuItems, loading, error, onAddToCart, itemsTotal} = this.props;
         if(loading){
             return <Spinner />
         }
@@ -35,7 +34,8 @@ class MenuList extends Component {
             return <MenuListItem
                 key={menuItem.id}
                 menuItem={menuItem}
-                onAddToCart={() => onAddToCart(menuItem.id)}/>
+                onAddToCart={() => onAddToCart(menuItem.id)}
+                itemsTotal={itemsTotal}/>
         });
 
         return (
@@ -48,7 +48,8 @@ const mapStateToProps = (state) => {
     return {
         menuItems: state.menu,
         loading: state.loading,
-        error: state.error
+        error: state.error,
+        itemsTotal: state.items
     }
 };
 

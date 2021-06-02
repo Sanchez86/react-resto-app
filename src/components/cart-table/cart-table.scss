@@ -26,11 +26,30 @@
             text-align: center;
             color: #fff;
             font-size: 24px;
+            display: flex;
         }
         &-img {
             height: 125px;
             width: 250px;
             object-fit: cover;
+        }
+        &-symbol{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #333;
+            border-radius: 4px;
+            width: 30px;
+            height: 30px;
+            background: none;
+            color: #fff;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: .5s;
+            font-size: 18px;
+            &:hover{
+                border: 1px solid #DDD;
+            }
         }
     }
     &__close {
