@@ -1,12 +1,12 @@
 import React from 'react';
 import './cart-table.scss';
 import {connect} from 'react-redux';
-import {deleteFromCart, onAddTheSame, onKillTheSame} from "../../actions";
+import {deleteFromCart, onAddTheSame, onKillTheSame, onSendData} from "../../actions";
 
-const CartTable = ({items, deleteFromCart, onAddTheSame, onKillTheSame}) => {
+const CartTable = ({items, deleteFromCart, onAddTheSame, onKillTheSame, onSendData}) => {
     return (
         <>
-            <div className="cart__title">Ваш заказ:</div>
+            <div className="cart__title">Ваш заказ: <button onClick={() => onSendData()} className="send"> Отправить заказ</button> </div>
             <div className="cart__list">
                 {
                     items.map(item => {
@@ -39,7 +39,8 @@ const mapStateToProps = ({items}) => {
 const mapDispatchToProps = {
     deleteFromCart,
     onAddTheSame,
-    onKillTheSame
+    onKillTheSame,
+    onSendData
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(CartTable);

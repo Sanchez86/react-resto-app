@@ -45,6 +45,12 @@ const onKillTheSame = (id) => {
     }
 };
 
+const onSendData = () => {
+    return{
+        type: 'SEND_DATA'
+    }
+};
+
 export {
     menuLoaded,
     menuRequested,
@@ -52,5 +58,6 @@ export {
     onAddToCart,
     deleteFromCart,
     onAddTheSame,
-    onKillTheSame
+    onKillTheSame,
+    onSendData
 };

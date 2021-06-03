@@ -66,3 +66,21 @@
         cursor: pointer;
     }
 }
+.send{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 4px;
+    border: 1px solid #fff;
+    cursor: pointer;
+    width: 190px;
+    height: 44px;
+    background: no-repeat;
+    transition: .5s;
+    margin: auto;
+    &:hover{
+        background-color: #3336;
+    }
+}

@@ -114,7 +114,30 @@ const reducer = (state = initialState, action) => {
               items: kill_items,
               totalPrice: state.totalPrice - kill_foundElement.price
           };
+      case 'SEND_DATA' :
+          console.log('state', state);
 
+          const newOrder = {
+              order: state.items,
+              price: state.totalPrice
+          };
+
+          const postData = async (url, data) => {
+            const response = await fetch (url,{
+                method: 'POST',
+                headers: {
+                    'Content-Type' : 'application/json'
+                },
+                body: data
+            });
+            return await response.json();
+          };
+
+          postData('http://localhost:3000/order', JSON.stringify(newOrder))
+              .then(res => console.log('res', res))
+              .catch(err => console.log('err', err));
+
+          return { ...state};
 
       default:
           return state;
